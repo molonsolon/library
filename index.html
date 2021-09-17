@@ -1,25 +1,39 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en">
 <head>
     <title>Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="CSS/style.css" rel="stylesheet" type="text/css" media="all">
+
 </head>
 <body>
-    <div id="book-container">
+    <nav id="nav" class="container">
+        <button id="new-book-btn" type="button">Add Book</button>
+    </nav>
+    <div id="book-container" class="container-fluid">
     </div>
-    <form id="new-book-form">
-        <input type="text" id="title" class="form-entry" name="title" placeholder="title">
-        <input type="text" id="author" class="form-entry" name="author" placeholder="author">
-        <input type="text" id="pages" class="form-entry" name="pages" placeholder="pages">
+    <div id="form-container" class="container">
+        <form id="new-book-form" class="form-off" onsubmit="return false">
+            <button id="form-close">x</button>
+            <input type="text" id="title" class="form-entry" name="title" placeholder="title">
+            <input type="text" id="author" class="form-entry" name="author" placeholder="author">
+            <input type="text" id="pages" class="form-entry" name="pages" placeholder="pages">
+            
+            <label for="read" class="form-entry" class="read-check" class="container">
+                <input type="radio" id="read" value="read" name="read">read
+            </label>
         
-        <label for="read" class="form-entry" class="read-check">
-            <input type="checkbox" id="read" name="read">read
-        </label>
-     
-        <label for="not-read" class="form-entry">
-            <input type="checkbox" id="not-read" name="not-read">not read yet
-        </label>
-    </form>
+            <label for="read" class="form-entry"  class="container">
+                <input type="radio" id="not-read" value="not read yet" name="read">not read yet
+            </label>
+            <button type="submit" id="new-book-submit" >Add to Library</button>
+        </form>
+    </div>
     <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
