@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="CSS/style.css" rel="stylesheet" type="text/css" media="all">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav id="nav" class="container">
-        <button id="new-book-btn" type="button">Add Book</button>
+    <nav id="nav" class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item"> 
+                <button id="new-book-btn" type="button" class="btn btn-outline-dark">Add Book</button>
+            </li>     
+        </ul>
+        
+
     </nav>
-    <div id="book-container" class="container-fluid">
+    <div id="book-container">
     </div>
     <div id="form-container" class="container">
         <form id="new-book-form" class="form-off" onsubmit="return false">

@@ -58,28 +58,37 @@ function addNewBook (title, author, pages, read) {
     book.classList.toggle('book');
     book.textContent += newBook.info();
     book.setAttribute(`data-book-number`, `${myLibrary.length}`)
+    
+    
     bookContainer.appendChild(book);
 }
 
 function displayBooks() {
     for (let i = 0; i < myLibrary.length; i++) {
+        
+        
         const book = document.createElement(`div`);
         book.classList.toggle('book');
+        book.classList.toggle(`card`);
+        book.classList.toggle(`col-lg`);
         book.setAttribute(`data-book-id`, `${i}`);
         
         const bookTitle = document.createElement(`p`);
         bookTitle.textContent = myLibrary[i].info();
         bookTitle.setAttribute(`data-book-title`, `${i}`);
         bookTitle.classList.toggle(`book-title`);
+        bookTitle.classList.toggle(`card-header`)
 
 
         const removeBookBtn = document.createElement(`button`);
         removeBookBtn.classList.toggle(`remove-book-btn`);
         removeBookBtn.textContent = `x`;
+        removeBookBtn.classList.toggle(`card-footer`)
         
         const readButton =  document.createElement(`button`);
         readButton.setAttribute(`id`,`read-btn`);
         readButton.textContent = `read status`;
+        readButton.classList.toggle(`card-footer`);
         
         
         bookContainer.appendChild(book);
