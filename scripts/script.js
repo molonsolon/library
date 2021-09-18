@@ -10,7 +10,7 @@ const theHobbit = addBookToLibrary(`The Hobbit`, `J.R.R. Tolkien`, `295`, `read 
 const formElements = addBookForm.elements;
 const formClose = document.querySelector(`#form-close`); 
 const formSubmit = document.querySelector(`#new-book-submit`);
-
+let rowNumber = 0;
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -67,6 +67,16 @@ function displayBooks() {
     for (let i = 0; i < myLibrary.length; i++) {
         
         
+        if (i % 4 === 0) {
+        const bookRow = document.createElement(`div`);
+        bookRow.classList.toggle(`row`);
+        rowNumber += 1;
+        bookRow.setAttribute(`book-row-${rowNumber}`)
+        }
+        
+        
+        
+
         const book = document.createElement(`div`);
         book.classList.toggle('book');
         book.classList.toggle(`card`);
@@ -89,9 +99,8 @@ function displayBooks() {
         readButton.setAttribute(`id`,`read-btn`);
         readButton.textContent = `read status`;
         readButton.classList.toggle(`card-footer`);
-        
-        
-        bookContainer.appendChild(book);
+       
+
         book.appendChild(bookTitle)
         book.appendChild(removeBookBtn);
         book.appendChild(readButton);
