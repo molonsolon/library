@@ -2,8 +2,13 @@ body {
   background-color: #fefbe6;
 }
 
-.card-header {
-  color: white;
+#nav {
+  height: 8vh;
+  background-color: rgba(105, 150, 105, 0.8);
+}
+
+.book-title {
+  color: #ecee5d;
 }
 
 .card-footer {
@@ -14,12 +19,18 @@ body {
   margin-right: 2%;
   margin-left: 2%;
   max-width: 30rem;
+  margin-top: 4%;
   min-height: 15rem;
   max-height: 48rem;
   background-color: #a691a5;
   color: #413c58;
   font-family: 'Montserrat-bold', sans-serif;
-  margin-top: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .book {
@@ -43,6 +54,11 @@ body {
 
 .form-off {
   visibility: hidden;
+}
+
+#new-book-btn {
+  color: white;
+  border-color: white;
 }
 
 /* #read {

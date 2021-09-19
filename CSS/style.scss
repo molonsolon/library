@@ -1,12 +1,5 @@
-$aspect-ratios: (
-  "1.6x1": 62.11%,
-  "4x3": calc(3 / 4 * 100%),
-  "16x9": calc(9 / 16 * 100%),
-  "21x9": calc(9 / 21 * 100%)
-);
-
 $champagne: hsla(52, 94%, 95%, 1);
-$laurel-green: hsla(69, 18%, 65%, 1);
+$laurel-green: hsla(120, 18%, 50%, .8);
 $lilac-luster: hsla(305, 11%, 61%, 1);
 $english-violet: hsla(251, 19%, 29%, 1);
 $black-olive: hsla(71, 11%, 87%, 1);
@@ -22,16 +15,19 @@ body {
 }
 
 #nav {
-    
+    height: 8vh;
+    background-color:$laurel-green;
 
 }
+
+
 
 .row {
    
 }
 
-.card-header {
-    color: white;
+.book-title {
+    color: rgb(236, 238, 93);
     
 }
 
@@ -43,14 +39,15 @@ body {
     margin-right: 2%;
     margin-left: 2%;
     max-width: 30rem;
-    
+    margin-top: 4%;
     min-height: 15rem;
     max-height: 48rem;
     background-color: $lilac-luster;
     color:hsla(251, 19%, 29%, 1);
     font-family: 'Montserrat-bold', sans-serif;
+    display: flex;
+    justify-content: center;
     
-    margin-top: 4%;
 }
 
 .book {
@@ -90,7 +87,8 @@ body {
     
 }
 #new-book-btn {
-   
+   color: white;
+   border-color: white;
 }
 
 #new-book-submit {
