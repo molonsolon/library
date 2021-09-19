@@ -19,7 +19,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     this.info = function () {
-        bookArray = [title, `by`, `${author},`, pages, `pages,`, read];
+        bookArray = [title, `<br>`, `by`, author, `<br>`, pages, `pages,`, `<br>`, read];
         return bookArray.join(` `);
 
     };
