@@ -1,4 +1,9 @@
-
+$aspect-ratios: (
+  "1.6x1": 62.11%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%)
+);
 
 $champagne: hsla(52, 94%, 95%, 1);
 $laurel-green: hsla(69, 18%, 65%, 1);
@@ -21,9 +26,38 @@ body {
 
 }
 
+.row {
+   
+}
+
+.card-header {
+    color: white;
+    
+}
+
+.card-footer {
+    color: rgb(255, 233, 137);
+}
+
+.card {
+    margin-right: 2%;
+    margin-left: 2%;
+    max-width: 30rem;
+    
+    min-height: 15rem;
+    max-height: 48rem;
+    background-color: $lilac-luster;
+    color:hsla(251, 19%, 29%, 1);
+    font-family: 'Montserrat-bold', sans-serif;
+    
+    margin-top: 4%;
+}
+
 .book {
-    height: auto;
-    width: 25%;
+    
+    --bs-aspect-ratio: 62.11%;
+    margin-right: 2%;
+    margin-left: 2%;
     background-color: $black-olive;
     color:hsla(251, 19%, 29%, 1);
     font-family: 'Montserrat', sans-serif;
@@ -31,14 +65,16 @@ body {
 }
 
 #book-container {
-    
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-top: 6%;
 }
 #read-btn {
     
 }
 
-#remove-book-btn {
-  
+.remove-book-btn {
+  color: gold;
 }
 
 

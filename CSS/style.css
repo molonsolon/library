@@ -2,12 +2,43 @@ body {
   background-color: #fefbe6;
 }
 
+.card-header {
+  color: white;
+}
+
+.card-footer {
+  color: #ffe989;
+}
+
+.card {
+  margin-right: 2%;
+  margin-left: 2%;
+  max-width: 30rem;
+  min-height: 15rem;
+  max-height: 48rem;
+  background-color: #a691a5;
+  color: #413c58;
+  font-family: 'Montserrat-bold', sans-serif;
+  margin-top: 4%;
+}
+
 .book {
-  height: auto;
-  width: 25%;
+  --bs-aspect-ratio: 62.11%;
+  margin-right: 2%;
+  margin-left: 2%;
   background-color: #e0e1da;
   color: #413c58;
   font-family: 'Montserrat', sans-serif;
+}
+
+#book-container {
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-top: 6%;
+}
+
+.remove-book-btn {
+  color: gold;
 }
 
 .form-off {

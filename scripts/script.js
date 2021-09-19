@@ -67,6 +67,7 @@ function displayBooks() {
         if (i % 4 === 0) {
             const addBookRow = document.createElement(`div`);
             addBookRow.classList.toggle(`row`);
+            
             rowNumber += 1;
             addBookRow.setAttribute(`id`, `book-row-${rowNumber}`);
             bookContainer.appendChild(addBookRow);
@@ -75,9 +76,11 @@ function displayBooks() {
         const bookRow = document.getElementById(`book-row-${rowNumber}`);
 
         const book = document.createElement(`div`);
-        book.classList.toggle('book');
+        
         book.classList.toggle(`card`);
-        book.classList.toggle(`col-lg`);
+        book.classList.toggle(`col-sm`);
+        
+
         book.setAttribute(`data-book-id`, `${i}`);
 
         const bookTitle = document.createElement(`p`);
@@ -92,7 +95,6 @@ function displayBooks() {
         removeBookBtn.classList.toggle(`card-footer`)
 
         const readButton = document.createElement(`button`);
-        readButton.setAttribute(`id`, `read-btn`);
         readButton.textContent = `read status`;
         readButton.classList.toggle(`card-footer`);
 
