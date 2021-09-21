@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav id="nav" class="navbar navbar-expand-sm">
-        <ul class="navbar-nav p-5">
+        <ul class="navbar-nav p-3">
             <li class="nav-item"> 
                 <button id="new-book-btn" type="button" class="btn btn-outline-dark">Add Book</button>
             </li>     
@@ -23,21 +23,45 @@
     </nav>
     <div id="book-container">
     </div>
-    <div id="form-container" class="container">
-        <form id="new-book-form" class="form-off" onsubmit="return false">
-            <button id="form-close">x</button>
-            <input type="text" id="title" class="form-entry" name="title" placeholder="title">
-            <input type="text" id="author" class="form-entry" name="author" placeholder="author">
-            <input type="text" id="pages" class="form-entry" name="pages" placeholder="pages">
-            
-            <label for="read" class="form-entry" class="read-check" class="container">
-                <input type="radio" id="read" value="read" name="read">read
-            </label>
+    <div id="form-container" class="container-sm">
         
-            <label for="read" class="form-entry"  class="container">
+        <form id="new-book-form" class="form-off"  onsubmit="return false">
+            <button id="form-close">x</button>
+            <div class="row mb-3">
+                <label for="title" class="col-sm-2 col-form-label">Title</label>
+                <div class="col-sm-10">
+                    <input type="text" id="title" class="form-entry" class="" name="title" placeholder="title">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="author" class="col-sm-2 col-form-label">Author</label>
+                <div class="col-sm-10">
+                    <input type="text" id="author" class="form-entry" class="col" name="author" placeholder="author">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="pages" class="col-sm-2 col-form-labe">Pages</label>
+                <div class="col-sm-10">
+                    <input type="text" id="pages" class="form-entry" class="col" name="pages" placeholder="pages">
+                </div>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Read Status</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input type="radio" id="read" value="read" name="read">
+                        <label for="read" class="form-entry" class="read-check" class="col"> 
+                            Read
+                        </label>
+                    </div>
+                    <div class="form-check"
+                </div>
+            
+        
+            <label for="read" class="form-entry"  class="col">
                 <input type="radio" id="not-read" value="not read yet" name="read">not read yet
             </label>
-            <button type="submit" id="new-book-submit" >Add to Library</button>
+            <button type="submit" id="new-book-submit"class="col" >Add to Library</button>
         </form>
     </div>
     <script src="scripts/script.js"></script>

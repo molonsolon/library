@@ -15,8 +15,8 @@ body {
 }
 
 #nav {
-    height: 8vh;
     background-color:$laurel-green;
+    padding-left: 3%;
 
 }
 
@@ -66,8 +66,9 @@ body {
     margin-left: 4%;
     margin-top: 6%;
 }
-#read-btn {
-    
+.read-btn {
+    color: gold;
+
 }
 
 .remove-book-btn {
@@ -82,9 +83,15 @@ body {
 
 #form-container {
    
+
 }
 #new-book-form {
-    
+    height: 25vh;
+    width: 50vw;
+    position: fixed;
+    margin-left: 20%;
+    z-index: 4;
+    margin-top: -50%;
 }
 #new-book-btn {
    color: white;
@@ -99,9 +106,7 @@ body {
  
 }
 
-.form-entry {
-   
-}
+
 
 #read,
 #not-read {

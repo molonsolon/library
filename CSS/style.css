@@ -3,8 +3,8 @@ body {
 }
 
 #nav {
-  height: 8vh;
   background-color: rgba(105, 150, 105, 0.8);
+  padding-left: 3%;
 }
 
 .book-title {
@@ -48,12 +48,25 @@ body {
   margin-top: 6%;
 }
 
+.read-btn {
+  color: gold;
+}
+
 .remove-book-btn {
   color: gold;
 }
 
 .form-off {
   visibility: hidden;
+}
+
+#new-book-form {
+  height: 25vh;
+  width: 50vw;
+  position: fixed;
+  margin-left: 20%;
+  z-index: 4;
+  margin-top: -50%;
 }
 
 #new-book-btn {

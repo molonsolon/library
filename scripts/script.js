@@ -97,11 +97,17 @@ function displayBooks() {
         const removeBookBtn = document.createElement(`button`);
         removeBookBtn.classList.toggle(`remove-book-btn`);
         removeBookBtn.textContent = `x`;
-        removeBookBtn.classList.toggle(`card-footer`)
+        removeBookBtn.classList.toggle(`btn`);
+        removeBookBtn.classList.toggle(`btn-outline-light`);
+        removeBookBtn.classList.toggle(`btn-md`);
+
 
         const readButton = document.createElement(`button`);
+        readButton.classList.toggle(`read-btn`)
         readButton.textContent = `read status`;
-        readButton.classList.toggle(`card-footer`);
+        readButton.classList.toggle(`btn`);
+        readButton.classList.toggle(`btn-outline-light`);
+        readButton.classList.toggle(`btn-md`);
 
         bookRow.appendChild(book);
         book.appendChild(bookTitle)
@@ -109,7 +115,13 @@ function displayBooks() {
         book.appendChild(readButton);
 
         removeBookBtn.addEventListener(`click`, () => {
-            bookRow.removeChild(book);
+            myLibrary.splice(i, 1);
+            
+            while (bookContainer.hasChildNodes()) {
+                bookContainer.removeChild(bookContainer.lastChild);
+            }
+            
+            displayBooks();
         });
 
         readButton.addEventListener(`click`, () => bookTitle.innerHTML = myLibrary[i].toggleRead());
