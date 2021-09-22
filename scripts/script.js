@@ -46,23 +46,22 @@ function Book(title, author, pages, read) {
 
 };
 
-
-
 function addBookToLibrary(title, author, pages, read) {
     newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
-// Book.prototype.info = function() {
-//     return `${title} by ${author}, ${pages} pages, ${read}`;
-// };
 
 function addNewBook(title, author, pages, read) {
     newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-    while (bookContainer.hasChildNodes()) {
-        bookContainer.removeChild(bookContainer.lastChild);
-    }
+    removeAllChildren(bookContainer);
     displayBooks();
+}
+
+function removeAllChildren(element) {
+    while (element.hasChildNodes()) {
+        element.removeChild(element.lastChild);
+    }
 }
 
 function displayBooks() {
@@ -80,11 +79,8 @@ function displayBooks() {
         const bookRow = document.getElementById(`book-row-${rowNumber}`);
 
         const book = document.createElement(`div`);
-        
         book.classList.toggle(`card`);
         book.classList.toggle(`col-sm`);
-        
-
         book.setAttribute(`data-book-id`, `${i}`);
 
         const bookTitle = document.createElement(`p`);
@@ -93,14 +89,12 @@ function displayBooks() {
         bookTitle.classList.toggle(`book-title`);
         bookTitle.classList.toggle(`text-center`);
         
-
         const removeBookBtn = document.createElement(`button`);
         removeBookBtn.classList.toggle(`remove-book-btn`);
         removeBookBtn.textContent = `x`;
         removeBookBtn.classList.toggle(`btn`);
         removeBookBtn.classList.toggle(`btn-outline-light`);
         removeBookBtn.classList.toggle(`btn-md`);
-
 
         const readButton = document.createElement(`button`);
         readButton.classList.toggle(`read-btn`)
@@ -116,11 +110,7 @@ function displayBooks() {
 
         removeBookBtn.addEventListener(`click`, () => {
             myLibrary.splice(i, 1);
-            
-            while (bookContainer.hasChildNodes()) {
-                bookContainer.removeChild(bookContainer.lastChild);
-            }
-            
+            removeAllChildren(bookContainer);
             displayBooks();
         });
 
@@ -141,8 +131,6 @@ formClose.addEventListener(`click`, () => {
 
 })
 
-
-
 formSubmit.addEventListener(`click`, () => {
     const formTitle = addBookForm.elements[1].value;
     const formAuthor = addBookForm.elements[2].value;
@@ -150,14 +138,5 @@ formSubmit.addEventListener(`click`, () => {
     const formReadRadio = addBookForm.elements.read;
     addNewBook(formTitle, formAuthor, formPages, formReadRadio.value);
 })
-
-
-// function addBookToLibrary(title, author, pages, read)) {
-//     newBook = new Book();
-//     myLibrary.push(newBook);
-// }
-
-
-
 
 displayBooks();

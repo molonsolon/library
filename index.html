@@ -23,10 +23,10 @@
     </nav>
     <div id="book-container">
     </div>
-    <div id="form-container" class="container-sm">
+    <div id="form-container" class="position-absolute top-50 start-50 translate-middle">
         
-        <form id="new-book-form" class="form-off"  onsubmit="return false">
-            <button id="form-close">x</button>
+        <form id="new-book-form" class="form-off" onsubmit="return false">
+            <button id="form-close" class="btn btn-outline-dark">x</button>
             <div class="row mb-3">
                 <label for="title" class="col-sm-2 col-form-label">Title</label>
                 <div class="col-sm-10">
@@ -49,19 +49,19 @@
                 <legend class="col-form-label col-sm-2 pt-0">Read Status</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input type="radio" id="read" value="read" name="read">
+                        <input type="radio" id="read" value="Read" name="Read">
                         <label for="read" class="form-entry" class="read-check" class="col"> 
                             Read
                         </label>
                     </div>
-                    <div class="form-check"
+                    <div class="form-check">
+                        <input type="radio" id="not-read" value="Not read yet" name="Read">
+                        <label for="read" class="form-entry"  class="col"> Not read yet
+                        </label>
+                    </div>
                 </div>
-            
-        
-            <label for="read" class="form-entry"  class="col">
-                <input type="radio" id="not-read" value="not read yet" name="read">not read yet
-            </label>
-            <button type="submit" id="new-book-submit"class="col" >Add to Library</button>
+            </fieldset>
+            <button type="submit" id="new-book-submit" class="btn btn-outline-dark" >Add to Library</button>
         </form>
     </div>
     <script src="scripts/script.js"></script>
