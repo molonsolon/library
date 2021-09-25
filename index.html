@@ -26,14 +26,14 @@
     <div id="form-container" class="position-absolute top-50 start-50 translate-middle">
         
         <form id="new-book-form" class="form-off" onsubmit="return false">
-            <button id="form-close" class="btn btn-outline-dark">x</button>
-            <div class="row mb-3">
+            <button id="form-close" class="btn btn-outline-light mb-4">x</button>
+            <div class="row mb-4">
                 <label for="title" class="col-sm-2 col-form-label">Title</label>
                 <div class="col-sm-10">
                     <input type="text" id="title" class="form-entry" class="" name="title" placeholder="title">
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-4">
                 <label for="author" class="col-sm-2 col-form-label">Author</label>
                 <div class="col-sm-10">
                     <input type="text" id="author" class="form-entry" class="col" name="author" placeholder="author">
@@ -45,10 +45,10 @@
                     <input type="text" id="pages" class="form-entry" class="col" name="pages" placeholder="pages">
                 </div>
             </div>
-            <fieldset class="row mb-3">
-                <legend class="col-form-label col-sm-2 pt-0">Read Status</legend>
+            <fieldset class="row mt-4 mb-2">
+                <legend class="col-form-label col-sm-2 pt-0"></legend>
                 <div class="col-sm-10">
-                    <div class="form-check">
+                    <div class="form-check mb-2">
                         <input type="radio" id="read" value="Read" name="Read">
                         <label for="read" class="form-entry" class="read-check" class="col"> 
                             Read
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </fieldset>
-            <button type="submit" id="new-book-submit" class="btn btn-outline-dark" >Add to Library</button>
+            <button type="submit" id="new-book-submit" class="btn btn-outline-light" >Add to Library</button>
         </form>
     </div>
     <script src="scripts/script.js"></script>

@@ -53,7 +53,7 @@ function addBookToLibrary(title, author, pages, read) {
 
 function addNewBook(title, author, pages, read) {
     newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook);
+    myLibrary.unshift(newBook);
     removeAllChildren(bookContainer);
     displayBooks();
 }
@@ -65,15 +65,17 @@ function removeAllChildren(element) {
 }
 
 function displayBooks() {
-    for (let i = 0; i < myLibrary.length; i++) {
+    for (let i = myLibrary.length-1; i >= 0; i--) {
 
-        if (i % 4 === 0) {
+        if (i % 4 === 0 || i === myLibrary.length-1) {
+            rowNumber += 1;
             const addBookRow = document.createElement(`div`);
             addBookRow.classList.toggle(`row`);
+            const previousBookRow = document.querySelector(`#book-row-${rowNumber-1}`)
             
-            rowNumber += 1;
             addBookRow.setAttribute(`id`, `book-row-${rowNumber}`);
-            bookContainer.appendChild(addBookRow);
+
+            bookContainer.insertBefore(addBookRow, previousBookRow);
         }
 
         const bookRow = document.getElementById(`book-row-${rowNumber}`);
@@ -81,20 +83,28 @@ function displayBooks() {
         const book = document.createElement(`div`);
         book.classList.toggle(`card`);
         book.classList.toggle(`col-sm`);
+        book.classList.toggle(`mw-20`);
+
         book.setAttribute(`data-book-id`, `${i}`);
 
         const bookTitle = document.createElement(`p`);
         bookTitle.innerHTML = myLibrary[i].info();
         bookTitle.setAttribute(`data-book-title`, `${i}`);
         bookTitle.classList.toggle(`book-title`);
+        bookTitle.classList.toggle(`card-text`);
+
         bookTitle.classList.toggle(`text-center`);
         
         const removeBookBtn = document.createElement(`button`);
         removeBookBtn.classList.toggle(`remove-book-btn`);
-        removeBookBtn.textContent = `x`;
-        removeBookBtn.classList.toggle(`btn`);
+        removeBookBtn.classList.toggle(`btn-close`);
+        removeBookBtn.classList.toggle(`position-absolute`);
+        removeBookBtn.classList.toggle(`top-0`);
+        removeBookBtn.classList.toggle(`end-0`);
+        removeBookBtn.classList.toggle(`p-2`);
+
         removeBookBtn.classList.toggle(`btn-outline-light`);
-        removeBookBtn.classList.toggle(`btn-md`);
+        removeBookBtn.classList.toggle(`btn-sm`);
 
         const readButton = document.createElement(`button`);
         readButton.classList.toggle(`read-btn`)
@@ -122,12 +132,12 @@ function displayBooks() {
 
 
 addBookButton.addEventListener(`click`, () => {
-    addBookForm.classList.toggle(`form-off`);
+    addBookForm.toggleAttribute(`form-container`);
 
 });
 
 formClose.addEventListener(`click`, () => {
-    addBookForm.classList.toggle(`form-off`);
+    addBookForm.toggleAttribute(`form-container`);
 
 })
 
