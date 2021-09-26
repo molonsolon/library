@@ -1,12 +1,49 @@
+* {
+  font-family: Montserrat;
+}
+
 body {
-  background-color: #eef060;
+  background-color: #300d20;
 }
 
 #nav {
-  background-color: #161118;
+  background-color: #eef060;
   padding-left: 3%;
-  -webkit-box-shadow: -10px -5px 8px 4px black;
-          box-shadow: -10px -5px 8px 4px black;
+  -webkit-box-shadow: 0px 2px 3px 2px #eef060;
+          box-shadow: 0px 2px 3px 2px #eef060;
+}
+
+.form-off {
+  display: none;
+  height: 0px;
+  width: 0px;
+}
+
+#new-book-form {
+  padding: 1rem 0 1rem 1rem;
+  z-index: 3;
+  border-radius: 5px;
+  background-color: rgba(21, 46, 32, 0.74);
+  color: #f8eeee;
+  -webkit-box-shadow: 3px 3px 3px 1px rgba(21, 46, 32, 0.74);
+          box-shadow: 3px 3px 3px 1px rgba(21, 46, 32, 0.74);
+}
+
+#new-book-btn {
+  color: #300d20;
+  border-color: #300d20;
+}
+
+#new-book-submit {
+  margin-left: 11.5rem;
+  margin-top: 1rem;
+  color: #f8eeee;
+}
+
+#form-close {
+  margin-left: 17.5rem;
+  margin-bottom: 1.5rem;
+  color: #f8eeee;
 }
 
 .book-title {
@@ -23,12 +60,12 @@ body {
   margin-top: 4%;
   min-height: 15rem;
   max-height: 48rem;
-  background-color: #21535e;
+  background-color: #64919c;
   color: #5f5880;
   border-style: solid;
   border-color: #f0813d;
-  -webkit-box-shadow: 3px -2px 3px 1px #f0813d;
-          box-shadow: 3px -2px 3px 1px #f0813d;
+  -webkit-box-shadow: 3px -1px 3px 1px #f0813d;
+          box-shadow: 3px -1px 3px 1px #f0813d;
   font-family: 'Montserrat-bold', sans-serif;
   font-size: 1.01rem;
   display: -webkit-box;
@@ -40,8 +77,10 @@ body {
 }
 
 .card:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
 
 .book {
@@ -69,35 +108,5 @@ body {
 
 .card:hover .remove-book-btn {
   display: block;
-}
-
-.form-off {
-  visibility: hidden;
-  margin-top: 1000px;
-}
-
-#new-book-form {
-  padding: 1rem 0 1rem 1rem;
-  z-index: 3;
-  border-radius: 5px;
-  background-color: rgba(21, 46, 32, 0.74);
-  color: #f8eeee;
-}
-
-#new-book-btn {
-  color: white;
-  border-color: white;
-}
-
-#new-book-submit {
-  margin-left: 11.5rem;
-  margin-top: 1rem;
-  color: #f8eeee;
-}
-
-#form-close {
-  margin-left: 17.5rem;
-  margin-bottom: 1.5rem;
-  color: #f8eeee;
 }
 /*# sourceMappingURL=style.css.map */

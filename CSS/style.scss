@@ -6,26 +6,66 @@ $black-olive: rgba(21, 46, 32, 0.74);
 $pink-moon: rgb(248, 238, 238);
 
 $xiketic: hsla(283, 16%, 8%, 1);
-$midnight-green-eagle-green: hsla(191, 48%, 25%, 1);
+$midnight-green-eagle-green-og: hsla(191, 48%, 25%, 1);
+$midnight-green-eagle-green: rgb(100, 145, 156);
+
 $icterine: hsla(61, 83%, 66%, 1);
 $mango-tango: hsla(23, 86%, 59%, 1);
 $dark-purple: hsla(328, 58%, 12%, 1);
 
 
-body {
-    background-color: $icterine;
+* {
+    font-family: Montserrat;
+}
 
+body {
+    background-color: $dark-purple;
+    
 }
 
 
 
 
 #nav {
-    background-color:$xiketic;
+    background-color:$icterine;
     padding-left: 3%;
-    box-shadow: -10px -5px 8px 4px black;
+    box-shadow: 0px 2px 3px 2px $icterine;
 
 }
+
+.form-off {
+    display: none;
+    height: 0px;
+    width: 0px;
+}
+
+#new-book-form {
+    padding: 1rem 0 1rem 1rem;
+    z-index: 3;
+    border-radius: 5px;
+    background-color: $black-olive;
+    color: $pink-moon;
+    box-shadow: 3px 3px 3px 1px $black-olive;
+}
+#new-book-btn {
+   color: $dark-purple;
+   border-color: $dark-purple;
+}
+
+#new-book-submit {
+
+    margin-left: 11.5rem;
+    margin-top: 1rem;
+    color: $pink-moon;
+
+}
+
+#form-close {
+    margin-left: 17.5rem;
+    margin-bottom: 1.5rem;
+    color: $pink-moon;
+}
+
 
 .book-title {
     color: whitesmoke;
@@ -46,7 +86,7 @@ body {
     color:rgb(95, 88, 128);
     border-style: solid;
     border-color: $mango-tango;
-    box-shadow: 3px -2px 3px 1px $mango-tango;
+    box-shadow: 3px -1px 3px 1px $mango-tango;
     font-family: 'Montserrat-bold', sans-serif;
     font-size: 1.01rem;
     display: flex;
@@ -55,7 +95,8 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    transition: .25s ease-in-out;
 }
 
 
@@ -89,33 +130,3 @@ body {
 }
 
 
-.form-off {
-    visibility: hidden;
-    margin-top: 1000px;
-}
-
-#new-book-form {
-    padding: 1rem 0 1rem 1rem;
-    z-index: 3;
-    border-radius: 5px;
-    background-color: $black-olive;
-    color: $pink-moon;
-}
-#new-book-btn {
-   color: white;
-   border-color: white;
-}
-
-#new-book-submit {
-
-    margin-left: 11.5rem;
-    margin-top: 1rem;
-    color: $pink-moon;
-
-}
-
-#form-close {
-    margin-left: 17.5rem;
-    margin-bottom: 1.5rem;
-    color: $pink-moon;
-}

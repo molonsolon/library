@@ -1,7 +1,8 @@
 
-
-
 let myLibrary = [];
+
+
+
 const body = document.querySelector(`body`);
 const bookContainer = document.querySelector(`#book-container`);
 const addBookButton = document.querySelector(`#new-book-btn`);
@@ -15,6 +16,9 @@ const formElements = addBookForm.elements;
 const formClose = document.querySelector(`#form-close`);
 const formSubmit = document.querySelector(`#new-book-submit`);
 let rowNumber = 0;
+const getLocalData = JSON.parse(localStorage.getItem("userLibrary"));
+
+
 
 
 function Book(title, author, pages, read) {
@@ -49,12 +53,18 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
     newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+    const setLocalData = localStorage.setItem("userLibrary", JSON.stringify(myLibrary));
+
 }
 
 function addNewBook(title, author, pages, read) {
     newBook = new Book(title, author, pages, read);
     myLibrary.unshift(newBook);
+    const setLocalData = localStorage.setItem("userLibrary", JSON.stringify(myLibrary));
+    setLocalData;
+    console.log(getLocalData);
     removeAllChildren(bookContainer);
+    
     displayBooks();
 }
 
@@ -66,7 +76,6 @@ function removeAllChildren(element) {
 
 function displayBooks() {
     for (let i = myLibrary.length-1; i >= 0; i--) {
-
         if (i % 4 === 0 || i === myLibrary.length-1) {
             rowNumber += 1;
             const addBookRow = document.createElement(`div`);
@@ -92,7 +101,7 @@ function displayBooks() {
         bookTitle.setAttribute(`data-book-title`, `${i}`);
         bookTitle.classList.toggle(`book-title`);
         bookTitle.classList.toggle(`card-text`);
-
+       
         bookTitle.classList.toggle(`text-center`);
         
         const removeBookBtn = document.createElement(`button`);
@@ -112,7 +121,7 @@ function displayBooks() {
         readButton.classList.toggle(`btn`);
         readButton.classList.toggle(`btn-outline-light`);
         readButton.classList.toggle(`btn-md`);
-
+        
         bookRow.appendChild(book);
         book.appendChild(bookTitle)
         book.appendChild(removeBookBtn);
@@ -121,23 +130,24 @@ function displayBooks() {
         removeBookBtn.addEventListener(`click`, () => {
             myLibrary.splice(i, 1);
             removeAllChildren(bookContainer);
+            
+            localStorage.removeItem(getLocalData[i]);
+            console.log(getLocalData);
             displayBooks();
         });
-
         readButton.addEventListener(`click`, () => bookTitle.innerHTML = myLibrary[i].toggleRead());
+        
     };
 };
 
 
-
-
 addBookButton.addEventListener(`click`, () => {
-    addBookForm.toggleAttribute(`form-container`);
+    addBookForm.classList.toggle(`form-off`);
 
 });
 
 formClose.addEventListener(`click`, () => {
-    addBookForm.toggleAttribute(`form-container`);
+    addBookForm.classList.toggle(`form-off`);
 
 })
 
@@ -148,5 +158,7 @@ formSubmit.addEventListener(`click`, () => {
     const formReadRadio = addBookForm.elements.read;
     addNewBook(formTitle, formAuthor, formPages, formReadRadio.value);
 })
+
+
 
 displayBooks();
