@@ -74,13 +74,15 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: .30s ease;
+  transition: .30s ease;
 }
 
 .card:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
 }
 
 .book {

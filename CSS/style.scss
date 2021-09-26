@@ -91,12 +91,12 @@ body {
     font-size: 1.01rem;
     display: flex;
     justify-content: center;
-
+    transition: .30s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    transition: .25s ease-in-out;
+    transform: scale(1.02);
+    transition: .35s ease-in-out;
 }
 
 
