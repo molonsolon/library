@@ -17,6 +17,38 @@ const formElements = addBookForm.elements;
 const formClose = document.querySelector(`#form-close`);
 const formSubmit = document.querySelector(`#new-book-submit`);
 
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    };
+
+    info() {
+        const bookArray = [this.title, `<br>`, `by`, this.author, `<br>`, this.pages, `pages`, `<br>`, this.read];
+        return DOMPurify.sanitize(bookArray.join(` `));
+    };
+
+    toggleRead() {
+        console.log(this.read);
+        if (this.read == `Not read yet `) {
+            this.read = `Read `;
+            bookArray = [title, `<br>`, `by`, author, `<br>`, pages, `pages`, `<br>`, `Read`];
+            return DOMPurify.sanitize(bookArray.join(` `));
+
+        } else if (this.read == `Read `) {
+            this.read = `Not read yet `;
+            bookArray = [title, `<br>`, `by`, author, `<br>`, pages, `pages`, `<br>`, `Not read yet`];
+            return DOMPurify.sanitize(bookArray.join(` `));
+        } else {
+            this.read === `ERROR`;
+            return alert(`ERROR`);
+        }
+    }
+}
+
 populateLocalStorage();
 function populateLocalStorage() {
     const getLocalData = JSON.parse(localStorage.getItem("userLibrary"));
@@ -38,43 +70,13 @@ function populateLocalStorage() {
 }
 
 
-
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function () {
-        bookArray = [title, `<br>`, `by`, author, `<br>`, pages, `pages`, `<br>`, read];
-        return DOMPurify.sanitize(bookArray.join(` `));
-
-    };
-    this.toggleRead = function () {
-        console.log(this.read);
-        if (this.read == `Not read yet `) {
-            this.read = `Read `;
-            bookArray = [title, `<br>`, `by`, author, `<br>`, pages, `pages`, `<br>`, `Read`];
-            return DOMPurify.sanitize(bookArray.join(` `));
-
-        } else if (this.read == `Read `) {
-            this.read = `Not read yet `;
-            bookArray = [title, `<br>`, `by`, author, `<br>`, pages, `pages`, `<br>`, `Not read yet`];
-            return DOMPurify.sanitize(bookArray.join(` `));
-        } else {
-            this.read === `ERROR`;
-            return alert(`ERROR`);
-        }
-    };
-
-};
-
 function addBookToLibrary(title, author, pages, read) {
-    newBook = new Book(title, author, pages, read);
+    const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
 
 function addNewBook(title, author, pages, read) {
-    newBook = new Book(title, author, pages, read);
+    const newBook = new Book(title, author, pages, read);
     myLibrary.unshift(newBook);
     removeAllChildren(bookContainer);
     console.log(`run`)
